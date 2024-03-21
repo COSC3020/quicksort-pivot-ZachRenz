@@ -24,7 +24,7 @@ might help with the notation for mathematical expressions.
 
 ## Answer
 
-Looking at slides 34, we can see that we have quarters of a standard array that are bad for finding a good pivot, and one solid good set of numbers in the middle. That, with the right combinations, the median can be either good or bad. I decided to label good and bad pivots like this. 
+Looking at slides 34, we can see that we have quarters of a standard array that are bad for finding a good pivot, and one solid good set of numbers in the middle. That, with the right combinations, the median can be either good or bad. A pivot is bad if it gives us a number outside of the good values, it's closer to the worst case that way. I decided to label good and bad pivots like this. 
 
 [ $Lo$ | $G$ | $Hi$ ] 
 
