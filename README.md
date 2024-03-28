@@ -40,7 +40,7 @@ $Lo$ ($G_{lo}|G_{hi}$) $Lo$ | $Hi$ ($G_{lo}|G_{hi}$) $Hi$
 
 ($G_{lo}|G_{hi}$) $Lo$ $Lo$ | ($G_{lo}|G_{hi}$) $Hi$ $Hi$
 
-$Lo$ $Lo$ $Lo$ | $Hi$ $Hi$ $Hi$
+$Hi$ $Hi$ $Hi$ | $Lo$ $Lo$ $Lo$
 
 $Hi$ $Hi$ $Lo$ | $Lo$ $Lo$ $Hi$ 
 
