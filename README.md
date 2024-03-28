@@ -30,13 +30,22 @@ Looking at slides 34, we can see that we have quarters of a standard array that 
 
 It's important to make a distinction between wether a bad pivot is from the high or low part of the list as in some combinations can make good median values ($Lo$ $G$ $Hi$ for example). Based on these we can find all the combinations of values that will produce a bad pivot, which is when more than one bad pivot from the same side of the list occur. And find how many times they can occur.
 
-$Lo$ $Lo$ $Lo$ | $Hi$ $Hi$ $Hi$ (only 1 permutation exists)
+Making just 3 cases ($Lo$ $G$ $Hi$) will misrepresent the size of good pivots, because you have a $50$% of choosing a good pivot, and we're dividing the bad cases by Low and High parts of the list, we still have the Good pivots taking up the othe half of the list. So to keep it simple I'm going to divide good into two parts, $G_{lo}$ and $G_{hi}$ and then all the areas of the list are fully represented in size.
 
-$Lo$ $Lo$ $G$ | $Hi$ $Hi$ $G$ (each 6 permutations)
+(($G_{lo}|G_{hi}$) means that either pivot could be here, representing 2 cases)
 
-We say 6 because G can either be from the high or low part of the good pivots, we have to break up G into two sides because it represents a half of the data, so we split it in two (each 1/4) so the math is easier with the other pivots taking up a fourth of the data.
+$Lo$ $Lo$ ($G_{lo}|G_{hi}$) | $Hi$ $Hi$ ($G_{lo}|G_{hi}$ )
 
+$Lo$ ($G_{lo}|G_{hi}$) $Lo$ | $Hi$ ($G_{lo}|G_{hi}$) $Hi$
 
-$Hi$ $Hi$ $Lo$ | $Lo$ $Lo$ $Hi$ (3 permutations)
+($G_{lo}|G_{hi}$) $Lo$ $Lo$ | ($G_{lo}|G_{hi}$) $Hi$ $Hi$
+
+$Lo$ $Lo$ $Lo$ | $Hi$ $Hi$ $Hi$
+
+$Hi$ $Hi$ $Lo$ | $Lo$ $Lo$ $Hi$ 
+
+$Hi$ $Lo$ $Hi$ | $Lo$ $Hi$ $Lo$
+
+$Lo$ $Hi$ $Lo$ | $Hi$ $Lo$ $Lo$
 
 This adds up to 20 bad cases. With 64 possible combinations We have a $31.25\% $ Chance of getting a bad median and slowing down our algorithm, and therfore a $68.75\% $ Chance of getting a good median and having a faster case. This is a little worse than twice as fast as a default pivot picking process (at random) so finding a Median of three values is actually faster. 
